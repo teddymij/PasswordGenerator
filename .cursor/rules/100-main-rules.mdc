@@ -1,0 +1,38 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Cursor Rule: Beginner HTML/CSS/JS Style
+
+## syntax-and-formatting
+- Écris un code JavaScript concis et clair en privilégiant des fonctions simples et déclaratives.
+- Évite les accolades inutiles dans les conditions quand une syntaxe courte suffit.
+- Rédige un HTML sémantique et du CSS clair.
+- Organise tes fichiers en sections distinctes : fichier HTML principal, fichiers CSS, fichiers JavaScript et ressources statiques.
+
+## javascript-usage
+- Utilise le JavaScript moderne (ES6+) sans notions d'orienté objet pour l'instant.
+- Préfère les fonctions simples aux classes.
+- Découpe ton code en fonctions réutilisables pour éviter la duplication.
+- Utilise des noms de variables descriptifs (ex. : `isActive`, `hasError`) pour clarifier leur rôle.
+
+## ui-and-styling
+- Construit ton interface en HTML et CSS en utilisant une approche "mobile-first".
+<!-- - Si tu souhaites, explore des frameworks CSS simples (comme Tailwind CSS) pour faciliter la création de designs réactifs. -->
+- N'utilise aucun library externe (que ce soit css ou js)
+- Sépare clairement la structure (HTML) de la présentation (CSS).
+
+## performance-optimization
+- Limite les manipulations du DOM au strict nécessaire pour conserver une bonne réactivité.
+- Utilise le chargement différé (lazy loading) pour les images ou contenus non critiques.
+- Évite les opérations répétitives inutiles et les redondances dans le code.
+
+## key-conventions
+- Adopte des conventions de nommage claires : 
+  - Pour le CSS, utilise des classes en minuscules avec des tirets (ex. : `menu-item`).
+  - Pour le JavaScript, utilise le camelCase (ex. : `displayContent`).
+- Commente ton code lorsque la logique n’est pas évidente.
+- Structure ton projet de manière à garder une base de code lisible et maintenable.
+
+# Fin de la règle
