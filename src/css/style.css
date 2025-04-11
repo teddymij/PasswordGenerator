@@ -40,7 +40,15 @@ HOME SECTION
   color: var(--color-shades--600);
   display: block;
   margin-top: 5rem;
+  position: relative;
+  transition: background-image 0.08s ease-in-out;
 }
+
+/* État au clic - change uniquement l'image de fond */
+.home__button--strongbox:active {
+  background-image: url('../../assets/img/btn-create-click.png');
+}
+
 .home__img--lock {
   width: 18.3rem;
   height: 19rem;
@@ -123,11 +131,6 @@ HOME SECTION
     opacity: 0;
     transform: translateY(-30px) scale(1);
   }
-}
-
-/* Classes pour les états du cadenas */
-.lock-open {
-  /* Par défaut, le cadenas est ouvert */
 }
 
 .lock-closed {
@@ -238,12 +241,22 @@ HISTORY SECTION
   border-radius: 50%;
 }
 .btn--openmanager,
-.btn--opentips {
+.btn--opentips,
+.btn--closemanager {
   position: absolute;
   bottom: 50%;
   transform: translateY(50%);
 }
-.btn--openmanager {
+.btn--openmanager :hover,
+.btn--opentips:hover,
+.btn--closemanager :hover,
+.tips__btn--close:hover,
+.generator__btn--generate:hover {
+  /* transform: translateY(45%); */
+  filter: brightness(1.4);
+}
+.btn--openmanager,
+.btn--closemanager {
   left: 0;
 }
 .btn--opentips {
@@ -332,4 +345,46 @@ TIPSSECTION
 .tips__text {
   font-size: var(--header-h2);
   font-weight: var(--font-weight-regular);
+}
+
+/* Empêcher le défilement de la page */
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Assurer que les sections occupent tout l'écran */
+.home,
+.pwd__generator {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Position par défaut des sections */
+.home {
+  transform: translateY(0);
+  z-index: 10;
+}
+
+.pwd__generator {
+  transform: translateY(100%);
+  z-index: 5;
+}
+
+/* Classes pour les animations de transition */
+.home.move-up {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.pwd__generator.move-up {
+  transform: translateY(0);
+  opacity: 1;
 }

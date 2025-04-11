@@ -1,51 +1,109 @@
+'use strict';
+// Elements
+
+const createButton = document.querySelector('.home__button--strongbox');
+const lockImage = document.querySelector('.home__img--lock');
+const lockStars = document.querySelectorAll('.lock-stars');
+const homeSection = document.querySelector('.home');
+const generatorSection = document.querySelector('.pwd__generator');
+const btnManager = document.querySelector('.btn--openmanager');
+const btnTips = document.querySelector('.btn--opentips');
+const btnExittips = document.querySelector('.tips__btn--close');
+const btnCloseManager = document.querySelector('.btn--closemanager');
+
+const passwordSection = document.querySelector('.generator--container');
+const historySection = document.querySelector('.generator__history');
+const managerSection = document.querySelector('.generator__manager');
+const tipsSection = document.querySelector('.generator__tips');
+let isAnimating = false;
+let currentSection = 'home';
+
 // Lock animation
 document.addEventListener('DOMContentLoaded', function () {
-  // Elements
-  const createButton = document.querySelector('.home__button--strongbox');
-  const lockImage = document.querySelector('.home__img--lock');
-  const lockStars = document.querySelectorAll('.lock-stars');
+  // Variables de contrôle
 
-  // Prepare the lock image (ensure it's the open version initially)
-  // If you don't have an open lock image, switch it programmatically
+  // Assurer que le cadenas est ouvert initialement
   if (!lockImage.src.includes('lock-open.png')) {
     lockImage.src = 'assets/img/lock-open.png';
   }
 
-  // Click event for the create strongbox button
-  createButton.addEventListener('click', function () {
-    // Add closed class to activate closing animation
-    lockImage.classList.remove('lock-open');
-    lockImage.classList.add('lock-closed');
+  // Désactiver complètement le défilement de la page
+  window.addEventListener(
+    'wheel',
+    function (e) {
+      e.preventDefault();
+    },
+    { passive: false }
+  );
 
-    // Switch to closed lock image after a slight delay
-    setTimeout(() => {
-      lockImage.src = 'assets/img/lock.png';
-
-      // Show stars animation
-      lockStars.forEach(star => {
-        star.style.opacity = '0'; // Reset
-        setTimeout(() => {
-          // Trigger animation by setting a fresh animation
-          star.style.animation = 'none';
-          void star.offsetWidth; // Trigger reflow
-          star.style.animation = star
-            .getAttribute('style')
-            .includes('nth-child(1)')
-            ? 'starFade 0.5s 0.1s forwards'
-            : star.getAttribute('style').includes('nth-child(2)')
-            ? 'starFade 0.5s 0.2s forwards'
-            : 'starFade 0.5s 0.3s forwards';
-        }, 10);
-      });
-
-      // Transition to generator section after animation completes
-      setTimeout(() => {
-        // Code to navigate to generator section
-        // This can be adjusted based on your navigation setup
-        document
-          .querySelector('.pwd__generator')
-          .scrollIntoView({ behavior: 'smooth' });
-      }, 800);
-    }, 300);
-  });
+  window.addEventListener(
+    'touchmove',
+    function (e) {
+      e.preventDefault();
+    },
+    { passive: false }
+  );
 });
+// Fonction pour animer la transition vers le générateur
+function navigateToGenerator() {
+  if (isAnimating || currentSection !== 'home') return;
+  isAnimating = true;
+
+  // Animation du cadenas
+  lockImage.classList.remove('lock-open');
+  lockImage.classList.add('lock-closed');
+
+  setTimeout(() => {
+    // Réinitialiser l'apparence du bouton
+
+    // Changer l'image du cadenas
+    lockImage.src = 'assets/img/lock.png';
+
+    // Animer les étoiles
+    lockStars.forEach(star => {
+      star.style.opacity = '0'; // Reset
+      setTimeout(() => {
+        star.style.animation = 'none';
+        void star.offsetWidth; // Forcer un reflow
+        star.style.animation = 'starFade 0.5s forwards';
+      }, 2);
+    });
+
+    // Transition entre les sections après l'animation
+    setTimeout(() => {
+      homeSection.classList.add('move-up');
+      generatorSection.classList.add('move-up');
+      currentSection = 'generator';
+
+      setTimeout(() => {
+        isAnimating = false;
+      }, 800);
+    }, 800);
+  }, 300);
+}
+function navigateToManager() {
+  managerSection.classList.remove('hidden');
+  passwordSection.classList.add('hidden');
+  historySection.classList.add('hidden');
+  btnManager.classList.add('hidden');
+  btnCloseManager.classList.remove('hidden');
+}
+function closeManager() {
+  managerSection.classList.add('hidden');
+  passwordSection.classList.remove('hidden');
+  historySection.classList.remove('hidden');
+  btnManager.classList.remove('hidden');
+  btnCloseManager.classList.add('hidden');
+}
+function navigateToTips() {
+  tipsSection.classList.remove('hidden');
+}
+function closeTips() {
+  tipsSection.classList.add('hidden');
+}
+// Événements de clic sur les boutons
+createButton.addEventListener('click', navigateToGenerator);
+btnManager.addEventListener('click', navigateToManager);
+btnTips.addEventListener('click', navigateToTips);
+btnExittips.addEventListener('click', closeTips);
+btnCloseManager.addEventListener('click', closeManager);

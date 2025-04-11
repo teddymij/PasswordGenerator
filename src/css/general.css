@@ -190,8 +190,14 @@ button {
   font-weight: var(--font-weight-semibold);
   color: var(--color-shades--700);
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
-
+button:hover {
+  filter: brightness(1.2);
+}
+button:active {
+  filter: brightness(0.7);
+}
 input[type='range'] {
   -webkit-appearance: none;
   appearance: none;
@@ -278,4 +284,5 @@ input[type='checkbox']:checked::after {
 
 .hidden {
   display: none;
+  transition: all 0.5s ease-in-out;
 }
