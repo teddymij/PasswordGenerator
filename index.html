@@ -18,346 +18,395 @@
     <script src="src/js/app.js" defer></script>
   </head>
   <body>
-    <header class="header">
-      <div class="header_container-wood">
-        <div class="header_logo">
-          <img src="assets/bg/logo.png" alt="logo" />
-        </div>
-      </div>
-    </header>
     <main>
-      <div class="container">
-        <section class="home">
+      <section class="home">
+        <div class="container">
+          <header class="home__header">
+            <img src="assets/img/bg/logo.png" alt="logo" />
+          </header>
           <button class="home__button--strongbox">Create a StrongBox</button>
-          <img class="home__img--lock" src="assets/img/lock.png" alt="lock" />
-        </section>
-        <section class="pwd__generator">
-          <div class="generator__header grid grid--2-cols">
-            <div class="generator__left--content">
-              <div class="generator__header--content flex">
-                <h2 class="generator__content">
-                  C321trgfdgfdg(-"'-è(-_è-è2454
-                </h2>
-                <button class="generator__btn--show">
-                  <img src="assets/img/ico/eyes.svg" alt="show password" />
+          <div class="lock-container">
+            <img
+              class="home__img--lock lock-open"
+              src="assets/img/lock-open.png"
+              alt="lock open"
+            />
+            <span class="lock-stars">*</span>
+            <span class="lock-stars">*</span>
+            <span class="lock-stars">*</span>
+          </div>
+        </div>
+      </section>
+      <section class="pwd__generator">
+        <div class="container">
+          <div class="generator--container">
+            <div class="generator__header grid grid--2-cols">
+              <div class="generator__left--content">
+                <div class="generator__header--content flex">
+                  <button class="generator__btn--show">
+                    <img src="assets/img/ico/eyes.svg" alt="show password" />
+                  </button>
+                  <h2 class="generator__content">
+                    C321trgfdgfdg(-"'-è(-_è-è2454fsffsdqfdfsssss
+                  </h2>
+                </div>
+                <div class="generator__quality flex">
+                  <img
+                    class="generator__quality--img"
+                    src="assets/img/ico/ok.svg"
+                    alt="lock"
+                  />
+                  <p class="generator__quality--text">StrongBox password</p>
+                </div>
+              </div>
+              <div class="generator__right--content">
+                <button class="generator__btn--copy">Copy</button>
+              </div>
+            </div>
+            <div class="generator__body grid grid--2-cols">
+              <div class="generator__left--content">
+                <p class="generator__left--text">Password length: (8 - 36)</p>
+                <div class="generator__left--range">
+                  <input type="range" min="8" max="36" value="12" />
+                </div>
+                <div class="grid grid--2-cols">
+                  <div class="generator__left--checkboxes">
+                    <div class="generator__left--uppercase">
+                      <input type="checkbox" id="uppercase" />
+                      <label for="uppercase">Uppercase</label>
+                    </div>
+                    <div class="generator__left--numbers">
+                      <input type="checkbox" id="numbers" />
+                      <label for="numbers">Numbers</label>
+                    </div>
+                  </div>
+                  <div class="generator__right--checkboxes">
+                    <div class="generator__right--lowercase">
+                      <input type="checkbox" id="lowercase" />
+                      <label for="uppercase">Lowercase</label>
+                    </div>
+                    <div class="generator__right--Symbols">
+                      <input type="checkbox" id="Symbols" />
+                      <label for="Symbols">Symbols</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="generator__right--content flex">
+                <img src="assets/img/box-state/weak.png" alt="weak" />
+                <button class="generator__btn--generate">
+                  <img
+                    src="assets/img/btn-addmanager.png"
+                    alt="Button to add to password manager"
+                  />
                 </button>
               </div>
-              <div class="generator__quality--pwd flex">
-                <img
-                  class="generator__quality--img"
-                  src="assets/img/ico/ok.svg"
-                  alt="lock"
-                />
-                <p class="generator__quality--text">StrongBox password</p>
-              </div>
-            </div>
-            <div class="generator__right--content">
-              <button class="generator__btn--copy">Copy</button>
             </div>
           </div>
-          <div class="generator__body grid grid--2-cols">
-            <div class="generator__left--content">
-              <p class="generator__left--text">
-                Password length: (8 - 36 characters)
+
+          <div class="generator__history">
+            <h2 class="history__header">Password History</h2>
+            <div class="history__body flex">
+              <div class="history__row">
+                <div class="history__item grid grid--2-cols">
+                  <button class="history__item--btn--showpwd">
+                    <span class="item_show--hide"
+                      ><img src="assets/img/ico/eyes-little.svg" alt="" /></span
+                    >***********
+                  </button>
+                  <button class="history__item--btn--delete">
+                    <img src="assets/img/ico/delete.svg" alt="delete" />
+                  </button>
+                </div>
+                <div class="history__item grid grid--2-cols">
+                  <button class="history__item--btn--showpwd">
+                    fdg2d12545ré"'é()'
+                  </button>
+                  <button class="history__item--btn--delete">
+                    <img src="assets/img/ico/delete.svg" alt="delete" />
+                  </button>
+                </div>
+                <div class="history__item grid grid--2-cols">
+                  <button class="history__item--btn--showpwd">
+                    fdg2d12545ré"'é()'
+                  </button>
+                  <button class="history__item--btn--delete">
+                    <img src="assets/img/ico/delete.svg" alt="delete" />
+                  </button>
+                </div>
+              </div>
+              <div class="history__row">
+                <div class="history__item grid grid--2-cols">
+                  <button class="history__item--btn--showpwd">
+                    <span class="item_show--hide"
+                      ><img src="assets/img/ico/eyes-little.svg" alt="" /></span
+                    >***********
+                  </button>
+                  <button class="history__item--btn--delete">
+                    <img src="assets/img/ico/delete.svg" alt="delete" />
+                  </button>
+                </div>
+                <div class="history__item grid grid--2-cols">
+                  <button class="history__item--btn--showpwd">
+                    fdg2d12545ré"'é()'
+                  </button>
+                  <button class="history__item--btn--delete">
+                    <img src="assets/img/ico/delete.svg" alt="delete" />
+                  </button>
+                </div>
+                <div class="history__item grid grid--2-cols">
+                  <button class="history__item--btn--showpwd">
+                    fdg2d12545ré"'é()'
+                  </button>
+                  <button class="history__item--btn--delete">
+                    <img src="assets/img/ico/delete.svg" alt="delete" />
+                  </button>
+                </div>
+              </div>
+              <div class="history__row">
+                <div class="history__item grid grid--2-cols">
+                  <button class="history__item--btn--showpwd">
+                    <span class="item_show--hide"
+                      ><img src="assets/img/ico/eyes-little.svg" alt="" /></span
+                    >***********
+                  </button>
+                  <button class="history__item--btn--delete">
+                    <img src="assets/img/ico/delete.svg" alt="delete" />
+                  </button>
+                </div>
+                <div class="history__item grid grid--2-cols">
+                  <button class="history__item--btn--showpwd">
+                    fdg2d12545ré"'é()'
+                  </button>
+                  <button class="history__item--btn--delete">
+                    <img src="assets/img/ico/delete.svg" alt="delete" />
+                  </button>
+                </div>
+                <div class="history__item grid grid--2-cols">
+                  <button class="history__item--btn--showpwd">
+                    fdg2d12545ré"'é()'
+                  </button>
+                  <button class="history__item--btn--delete">
+                    <img src="assets/img/ico/delete.svg" alt="delete" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="generator__manager hidden">
+            <h2 class="manager__header">Password Manager</h2>
+            <div class="manager__body">
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+              <div class="manager__item grid grid--5-cols">
+                <p class="manager__item--name">Email</p>
+                <button class="manager__item--password">
+                  **********************
+                </button>
+                <button class="manager__item--btn--showpwd">
+                  <img src="assets/img/ico/eyes-little-open.svg" alt="show" />
+                </button>
+                <button class="manager__item--btn--copy">
+                  <img src="assets/img/ico/copy.svg" alt="copy" />
+                </button>
+                <button class="manager__item--btn--delete">
+                  <img src="assets/img/ico/delete.svg" alt="delete" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="generator__tips hidden">
+            <button class="tips__btn--close">
+              <img src="assets/img/btn-exit.png" alt="close" />
+            </button>
+            <article class="tips__long">
+              <img src="assets/img/tip/tip-long.png" alt="long" />
+              <h1 class="tips__header">LONG</h1>
+              <p class="tips__text">
+                The longer a password,the more secure it is. A strong password
+                should be at least 10 characters long
               </p>
-              <div class="generator__left--range">
-                <input type="range" min="8" max="36" value="12" />
-              </div>
-              <div class="grid grid--2-cols">
-                <div class="generator__left--checkboxes">
-                  <div class="generator__left--uppercase">
-                    <input type="checkbox" id="uppercase" />
-                    <label for="uppercase">Uppercase</label>
-                  </div>
-                  <div class="generator__left--numbers">
-                    <input type="checkbox" id="numbers" />
-                    <label for="numbers">Numbers</label>
-                  </div>
-                </div>
-                <div class="generator__right--checkboxes">
-                  <div class="generator__right--lowercase">
-                    <input type="checkbox" id="lowercase" />
-                    <label for="uppercase">Lowercase</label>
-                  </div>
-                  <div class="generator__right--Symbols">
-                    <input type="checkbox" id="Symbols" />
-                    <label for="Symbols">Symbols</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="generator__right--content flex">
-              <img src="assets/img/box-state/weak.png" alt="weak" />
-              <button class="generator__btn--generate">
-                <img
-                  src="assets/img/btn-addmanager.png"
-                  alt="Button to add to password manager"
-                />
-              </button>
-            </div>
+            </article>
+            <article class="tips__complex">
+              <img src="assets/img/tip/tip-complex.png" alt="long" />
+              <h1 class="tips__header">Complex</h1>
+              <p class="tips__text">
+                Strong passwords use a combinaison of letters,numbers,cases,
+                symbols to form an unpredictible string
+              </p>
+            </article>
+            <article class="tips__unique">
+              <img src="assets/img/tip/tip-unique.png" alt="long" />
+              <h1 class="tips__header">Unique</h1>
+              <p class="tips__text">
+                A strong password should be unique to each account to reduce
+                vulnerability in the event of a hack
+              </p>
+            </article>
           </div>
-        </section>
-        <section class="pwd__history">
-          <h2 class="history__header">Password History</h2>
-          <div class="history__body flex">
-            <div class="history__row">
-              <div class="history__item grid grid--2-cols">
-                <button class="history__item--btn--showpwd">
-                  <span class="item_show--hide"
-                    ><img src="assets/img/ico/eyes-little.svg" alt="" /></span
-                  >***********
-                </button>
-                <button class="history__item--btn--delete">
-                  <img src="assets/img/ico/trash.svg" alt="delete" />
-                </button>
-              </div>
-              <div class="history__item grid grid--2-cols">
-                <button class="history__item--btn--showpwd">
-                  fdg2d12545ré"'é()'
-                </button>
-                <button class="history__item--btn--delete">
-                  <img src="assets/img/ico/trash.svg" alt="delete" />
-                </button>
-              </div>
-              <div class="history__item grid grid--2-cols">
-                <button class="history__item--btn--showpwd">
-                  fdg2d12545ré"'é()'
-                </button>
-                <button class="history__item--btn--delete">
-                  <img src="assets/img/ico/trash.svg" alt="delete" />
-                </button>
-              </div>
-            </div>
-            <div class="history__row">
-              <div class="history__item grid grid--2-cols">
-                <button class="history__item--btn--showpwd">
-                  <span class="item_show--hide"
-                    ><img src="assets/img/ico/eyes-little.svg" alt="" /></span
-                  >***********
-                </button>
-                <button class="history__item--btn--delete">
-                  <img src="assets/img/ico/trash.svg" alt="delete" />
-                </button>
-              </div>
-              <div class="history__item grid grid--2-cols">
-                <button class="history__item--btn--showpwd">
-                  fdg2d12545ré"'é()'
-                </button>
-                <button class="history__item--btn--delete">
-                  <img src="assets/img/ico/trash.svg" alt="delete" />
-                </button>
-              </div>
-              <div class="history__item grid grid--2-cols">
-                <button class="history__item--btn--showpwd">
-                  fdg2d12545ré"'é()'
-                </button>
-                <button class="history__item--btn--delete">
-                  <img src="assets/img/ico/trash.svg" alt="delete" />
-                </button>
-              </div>
-            </div>
-            <div class="history__row">
-              <div class="history__item grid grid--2-cols">
-                <button class="history__item--btn--showpwd">
-                  <span class="item_show--hide"
-                    ><img src="assets/img/ico/eyes-little.svg" alt="" /></span
-                  >***********
-                </button>
-                <button class="history__item--btn--delete">
-                  <img src="assets/img/ico/trash.svg" alt="delete" />
-                </button>
-              </div>
-              <div class="history__item grid grid--2-cols">
-                <button class="history__item--btn--showpwd">
-                  fdg2d12545ré"'é()'
-                </button>
-                <button class="history__item--btn--delete">
-                  <img src="assets/img/ico/trash.svg" alt="delete" />
-                </button>
-              </div>
-              <div class="history__item grid grid--2-cols">
-                <button class="history__item--btn--showpwd">
-                  fdg2d12545ré"'é()'
-                </button>
-                <button class="history__item--btn--delete">
-                  <img src="assets/img/ico/trash.svg" alt="delete" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+        </div>
+        <!-- Button open manager -->
+        <button class="btn--open btn--openmanager">
+          <img src="assets/img/btn-key.png" alt="manager" />
+        </button>
+        <!-- Button open tips -->
+        <button class="btn--open btn--opentips">
+          <img src="assets/img/btn-tip.png" alt="tips" />
+        </button>
+      </section>
     </main>
     <footer class="footer">
       <p>© 2025 Teddy. All rights reserved.</p>
     </footer>
-
-    <section class="pwd__manager hidden">
-      <h2 class="manager__header">Password Manager</h2>
-      <div class="manager__body">
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-        <div class="manager__item grid grid--3-cols">
-          <span class="manager__item--btn--showpwd"
-            ><img src="src/img/ico/eyes-little.svg" alt=""
-          /></span>
-          <p class="manager__item--name">Email</p>
-          <button class="manager__item--password">
-            **********************
-          </button>
-          <button class="manager__item--btn--delete">
-            <img src="assets/img/ico/trash.svg" alt="delete" />
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="pwd__tips hidden">
-      <button class="tips__btn--close">
-        <img src="assets/img/btn-exit.svg" alt="close" />
-      </button>
-      <article class="tips__long">
-        <img src="assets/img/tip/long.svg" alt="long" />
-        <h1 class="tips__header">LONG</h1>
-        <p class="tips__text">
-          The longer a password,the more secure it is. A strong password should
-          be at least 10 characters long
-        </p>
-      </article>
-      <article class="tips__complex">
-        <img src="assets/img/tip/complex.svg" alt="long" />
-        <h1 class="tips__header">Complex</h1>
-        <p class="tips__text">
-          Strong passwords use a combinaison of letters,numbers,cases, symbols
-          to form an unpredictible string
-        </p>
-      </article>
-      <article class="tips__unique">
-        <img src="assets/img/tip/complex.svg" alt="long" />
-        <h1 class="tips__header">Unique</h1>
-        <p class="tips__text">
-          A strong password should be unique to each account to reduce
-          vulnerability in the event of a hack
-        </p>
-      </article>
-    </section>
   </body>
 </html>

@@ -1,0 +1,281 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+DESKTOP : 16 | 32 | 120  
+Mobile : 11 | 20| 83  
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing
+-0.5px
+0.75px
+
+--- 02 COLORS
+
+- Primary1:#fdca72
+- Primary2: #cd8e09
+- Primary3: #6d562d
+- Tints:
+#974f13
+#457e2f
+#a4361a
+#ffebc9
+- Shades: 
+#f6f6f3
+#d4d4d4
+#898888
+#272725
+
+
+--- 06 BORDER-RADIUS
+
+Default: 20px
+Medium: 30px
+
+--- 07 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+:root {
+  /* COLORS */
+  --color-primary0: #ffebc9;
+  --color-primary1: #fdca72;
+  --color-primary2: #cd8e09;
+  --color-primary3: #6d562d;
+  --color-tints--red: #a4361a;
+  --color-tints--green: #457e2f;
+  --color-tints--brown: #974f13;
+  --color-shades--100: #f6f6f3;
+  --color-shades--200: #e4d6c7;
+  --color-shades--300: #d4d4d4;
+  --color-shades--500: #898888;
+  --color-shades--600: #464542;
+  --color-shades--700: #272725;
+
+  --color-filter-city: rgba(237, 198, 101, 0.473);
+
+  /* IMAGE */
+  --bg-city: url(../../assets/img/bg/bg-city.png);
+  --bg-bank: url(../../assets/img/bg/bg-bank.png);
+  --banner-wood: url(../../assets/img/bg/banner-wood.png);
+  --btn-strongbox: url(../../assets/img//btn-create.png);
+  --logo: url(../../assets/img/bg/logo.png);
+
+  /* BORDER RADIUS */
+  --border-radius-verysmall: 5px;
+  --border-radius-small: 10px;
+  --border-radius-medium: 20px;
+  --border-radius-large: 30px;
+
+  /* FONT SIZES */
+  --font-size-xs: 1rem;
+  --font-size-small: 1.4rem;
+  --font-size-medium: 1.6rem;
+  --font-size-large: 2.4rem;
+  --font-size-xl: 3.5rem;
+  --font-size-xxl: 7.2rem;
+
+  /* FONT WEIGHTS */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  /*Letter height | Spacing */
+  --letter-height-default: 1;
+  --letter-height-small: 1.05;
+  --letter-height-medium: 1.2;
+  --letter-height-large: 1.4;
+  --letter-spacing-default: -0.5px;
+  --letter-spacing-small: 0.75px;
+
+  /* SPACING */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.7rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3.5rem;
+  --spacing-xxl: 5rem;
+  --spacing-xxxl: 10rem;
+
+  /* SHADOWS */
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 4rem 6rem rgba(0, 0, 0, 0.5);
+
+  /* TRANSITIONS */
+  --transition-default: all 0.2s;
+  --transition-smooth: all 0.3s ease-in-out;
+  --transition-slow: all 0.5s;
+
+  /* COMPONENT SPECIFIC */
+  --header-h0: 6.8rem;
+  --header-h1: 3.2rem;
+  --header-h2: 2.4rem;
+  --header-h3: 1.8rem;
+}
+
+/* RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--header-h2);
+  line-height: 1;
+  letter-spacing: 0.5px;
+  color: var(--color-shades--700);
+  height: 100%;
+}
+.container {
+  width: 100%;
+  /* margin: 0 auto;
+  text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid {
+  display: grid;
+  align-items: center;
+}
+.grid--2-cols {
+  column-gap: var(--spacing-lg);
+  row-gap: 10rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--5-cols {
+  column-gap: var(--spacing-lg);
+  grid-template-columns: 2fr 3fr 0.25fr 0.25fr 0.25fr;
+  grid-template-rows: 40px;
+  justify-items: start;
+}
+.flex {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: var(--header-h2);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-shades--700);
+  cursor: pointer;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 41.3rem;
+  margin: var(--spacing-md) 0 var(--spacing-xl) 0;
+}
+/* Piste pour Chrome, Safari */
+input[type='range']::-webkit-slider-runnable-track {
+  height: 1.7rem;
+  cursor: pointer;
+  background: var(--color-tints--green);
+  border-radius: var(--border-radius-verysmall);
+}
+
+/* Piste pour Firefox */
+input[type='range']::-moz-range-track {
+  height: 1.7rem;
+  cursor: pointer;
+  background: var(--color-tints--green);
+  border-radius: var(--border-radius-verysmall);
+}
+
+/* Curseur pour Chrome, Safari */
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin-top: -0.6rem;
+  background: var(--color-tints--brown);
+  cursor: pointer;
+}
+/* Curseur pour Firefox */
+input[type='range']::-moz-range-thumb {
+  border: none;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin-top: -0.6rem;
+  background: var(--color-tints--brown);
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none; /* pour Chrome, Safari */
+  -moz-appearance: none; /* pour Firefox */
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--color-shades--500);
+  border-radius: 4px; /* optionnel, pour arrondir la case */
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+/* Quand la checkbox est cochée */
+input[type='checkbox']:checked {
+  background-color: var(--color-tints--green);
+  border-color: var(--color-tints--green);
+}
+
+/* Ajout d'un pseudo-élément pour la coche */
+input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.footer {
+  text-align: center;
+  background: none;
+  transform: translateY(-35px);
+  color: var(--color-shades--600);
+  font-size: var(--font-size-small);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
